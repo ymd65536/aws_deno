@@ -1,0 +1,13 @@
+version: '3'
+services:
+  aws_cli:
+    container_name: 'deno_cli'
+    privileged: true
+    hostname: 'deno_cli'
+    build: .
+    tty: true
+    restart: always
+    volumes:
+      - type: bind
+        source: $PWD
+        target: /home/ec2-user
